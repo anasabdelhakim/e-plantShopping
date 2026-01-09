@@ -1,6 +1,6 @@
-# 🌿 Paradise Nursery – Shopping Application
+# 🌿 e-plantShopping Application
 
-Paradise Nursery is a modern **React + TypeScript** shopping application that allows users to browse houseplants, add them to a cart, and manage quantities with a smooth and responsive UI.  
+e-plantShopping is a modern **React + TypeScript** shopping application that allows users to browse houseplants, add them to a cart, and manage quantities with a smooth and responsive UI.  
 This project was completed as a **final graded assignment** and demonstrates component-based design and **Redux Toolkit** for global state management.
 
 ---
@@ -33,7 +33,7 @@ https://github.com/anasabdelhakim/paradise-nursery
 ## ✨ Features
 
 ### 🏠 Landing Page
-- Paradise Nursery company name
+- e-plantShopping company name
 - Background image
 - “Get Started” button
 
