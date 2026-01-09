@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ShoppingBag, ArrowLeft, Leaf } from "lucide-react";
 import { toast } from "sonner";
 import Navbar from "../src/components/Navbar";
-import CartItemCard from "../src/components/CartItemCard";
+import CartItemCard from "../src/components/CartItem";
 import { selectCartItems, selectCartTotal } from "../src/store/CartSlice";
 
 const Cart = () => {
