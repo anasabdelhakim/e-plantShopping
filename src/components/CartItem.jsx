@@ -6,27 +6,19 @@ function CartItem({ item }) {
   const dispatch = useDispatch();
 
   const increaseQuantity = () => {
-    dispatch(
-      updateQuantity({
-        id: item.id,
-        quantity: item.quantity + 1,
-      })
-    );
+    dispatch(updateQuantity({ id: item.id, quantity: item.quantity + 1 }));
   };
 
   const decreaseQuantity = () => {
-    dispatch(
-      updateQuantity({
-        id: item.id,
-        quantity: item.quantity - 1,
-      })
-    );
+    if (item.quantity > 1) {
+      dispatch(updateQuantity({ id: item.id, quantity: item.quantity - 1 }));
+    }
   };
+
   const itemTotal = item.price * item.quantity;
 
   return (
     <div className="flex flex-col sm:flex-row gap-4 p-4 bg-card rounded-xl border border-border animate-fade-in">
-      {/* Image */}
       <div className="w-full sm:w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
         <img
           src={item.image}
@@ -35,7 +27,6 @@ function CartItem({ item }) {
         />
       </div>
 
-      {/* Details */}
       <div className="flex-1 flex flex-col sm:flex-row sm:items-center gap-4">
         <div className="flex-1">
           <h3 className="font-display text-lg font-semibold text-foreground">
@@ -44,10 +35,9 @@ function CartItem({ item }) {
           <p className="text-muted-foreground">${item.price.toFixed(2)} each</p>
         </div>
 
-        {/* Quantity Controls */}
         <div className="flex items-center gap-3">
           <button
-            onClick={() => decreaseQuantity(item.id)}
+            onClick={decreaseQuantity}
             className="quantity-btn"
             aria-label="Decrease quantity"
           >
@@ -57,7 +47,7 @@ function CartItem({ item }) {
             {item.quantity}
           </span>
           <button
-            onClick={() => increaseQuantity(item.id)}
+            onClick={increaseQuantity}
             className="quantity-btn"
             aria-label="Increase quantity"
           >
@@ -65,14 +55,12 @@ function CartItem({ item }) {
           </button>
         </div>
 
-        {/* Item Total */}
         <div className="text-right sm:w-24">
           <p className="text-lg font-bold text-forest">
             ${itemTotal.toFixed(2)}
           </p>
         </div>
 
-        {/* Delete Button */}
         <button
           onClick={() => dispatch(removeItem(item.id))}
           className="p-2 rounded-lg text-destructive hover:bg-destructive/10 transition-colors self-start sm:self-center"

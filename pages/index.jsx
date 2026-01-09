@@ -24,9 +24,9 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
+
       {/* Hero Section */}
       <section className="relative h-screen flex items-center">
-        {/* Background Image */}
         <div className="absolute inset-0">
           <img
             src="./assests/hero-plants.jpg"
@@ -36,11 +36,10 @@ const Index = () => {
           <div className="hero-overlay absolute inset-0" />
         </div>
 
-        {/* Content */}
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-2xl animate-slide-up">
             <span className="inline-block px-4 py-2 rounded-full bg-sage/30 text-cream text-sm font-medium mb-6">
-              🌿 Welcome to Paradise
+              🌿 Welcome to Paradise Nursery
             </span>
             <h1 className="font-display text-5xl md:text-7xl font-bold text-cream mb-6 leading-tight">
               Bring Nature
@@ -58,13 +57,6 @@ const Index = () => {
               Get Started
               <ArrowRight className="w-5 h-5" />
             </Link>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-8 h-12 rounded-full border-2 border-cream/50 flex items-start justify-center p-2">
-            <div className="w-1 h-3 rounded-full bg-cream/50" />
           </div>
         </div>
       </section>
